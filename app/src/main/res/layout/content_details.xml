@@ -29,7 +29,7 @@
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/textTitle"
-            
+
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
