@@ -2,6 +2,7 @@ package com.ranx.xcosx;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class DetailsActivity extends AppCompatActivity {
 
     public TextView textView;
@@ -21,14 +29,55 @@ public class DetailsActivity extends AppCompatActivity {
     public ImageView imageView;
     public String subTitle;
     public TextView stvTitle;
+    FloatingActionButton myFab;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        textView=findViewById(R.id.textTitle);
+
+
+        /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+        *
+        *
+        * Showing add hear
+        *
+        * */
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adViewDetails);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    /*
+    *
+    *
+    *
+    *
+    * */
+
+
+
+
+    textView=findViewById(R.id.textTitle);
         stvTitle=findViewById(R.id.subtitle);
         imageView=findViewById(R.id.image_view);
+
+        myFab = findViewById(R.id.toolbar1);
+        myFab.setImageResource(R.drawable.ic_arrow_point_to_back);
+        //    myFab.setBackgroundColor(getResources().getColor(R.color.browser_actions_bg_grey));
+        // myFab.setIcon(R.drawable.world_map);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
+
 
         /* change the color of status bar*******************************************************
         *
@@ -42,7 +91,7 @@ public class DetailsActivity extends AppCompatActivity {
 
 
         //--------------------------------------------------------------------------------------------------
-
+/*
         Toolbar toolbar = findViewById(R.id.toolbarDetails);
        // toolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_back));
@@ -56,6 +105,7 @@ public class DetailsActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        */
         //--------------------------------------------------------------------------------------
 
         Intent in = getIntent();
@@ -76,6 +126,8 @@ public class DetailsActivity extends AppCompatActivity {
 
 
        // Toast.makeText(this, "Heljdlsd "+title, Toast.LENGTH_SHORT).show();
+        textView.setTextColor(Color.parseColor("#FFFFFF"));
+        stvTitle.setTextColor(Color.parseColor("#FFFFFF"));
 
         textView.setText(title);
         stvTitle.setText(subTitle);
