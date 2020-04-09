@@ -20,23 +20,49 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.ads.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
+    private lateinit var mInterstitialAd: InterstitialAd
     private lateinit var appBarConfiguration: AppBarConfiguration
     var drawerLayout: DrawerLayout? =null
+
+    lateinit var mAdView : AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+/***************************************************************************************
+*
+*
+* **************************************************************************************/
 
+       MobileAds.initialize(this) {}
+        mAdView = this.findViewById(R.id.adView)
+       val adRequest = AdRequest.Builder().build()
+       mAdView.loadAd(adRequest)
+
+
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        mInterstitialAd.adListener = object : AdListener() {
+            override fun onAdClosed() {
+                mInterstitialAd.loadAd(AdRequest.Builder().build())
+            }
+        }
+
+        /*********************************************************************************************
+ ********************************************************************************************/
 
         val lvCards =
             findViewById<ListView>(R.id.list_cards)
-        val adapter = CardsAdapter(this)
+        val adapter = CardsAdapter(this,mInterstitialAd)
 
         lvCards.adapter = adapter
         adapter.addAll(
@@ -54,12 +80,12 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
+       // val fab: FloatingActionButton = findViewById(R.id.fab)
+        //fab.setOnClickListener { view ->
+          //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            //    .setAction("Action", null).show()
+       // }
+        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(false);
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -74,7 +100,10 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                  R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
-       setupActionBarWithNavController(navController, appBarConfiguration)
+            setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+
         //navView.setupWithNavController(navController)
     }
 

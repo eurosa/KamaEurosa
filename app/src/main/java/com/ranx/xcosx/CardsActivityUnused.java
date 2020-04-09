@@ -5,17 +5,22 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.InterstitialAd;
+
 /**
  * @author Alhaytham Alfeel on 10/10/2016.
  */
-public class CardsActivity extends AppCompatActivity {
+public class CardsActivityUnused extends AppCompatActivity {
+    /*
+    public InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
 
         ListView lvCards = findViewById(R.id.list_cards);
-        CardsAdapter adapter = new CardsAdapter(this);
+        CardsAdapter adapter = new CardsAdapter(this,mInterstitialAd);
 
         lvCards.setAdapter(adapter);
         adapter.addAll(new CardModel(R.drawable.mercury, R.string.mercury, R.string.mercury_sub),
@@ -29,5 +34,5 @@ public class CardsActivity extends AppCompatActivity {
                 new CardModel(R.drawable.pluto, R.string.pluto, R.string.pluto_sub));
     }
 
-
+*/
 }

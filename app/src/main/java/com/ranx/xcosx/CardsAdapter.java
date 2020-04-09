@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.ads.InterstitialAd;
+
 import static androidx.core.content.ContextCompat.startActivity;
 
 /**
@@ -26,9 +29,11 @@ import static androidx.core.content.ContextCompat.startActivity;
 
 public class CardsAdapter extends ArrayAdapter<CardModel> {
     private boolean isCheck=false;
+    public InterstitialAd mInterstitial;
 
-    public CardsAdapter(Context context) {
+    public CardsAdapter(Context context, InterstitialAd mInterstitialAd) {
         super(context, R.layout.card_item);
+        this.mInterstitial=mInterstitialAd;
     }
 
     @NonNull
@@ -53,6 +58,15 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                if (mInterstitial.isLoaded()) {
+                    mInterstitial.show();
+                } else {
+                    Log.d("Adshow", "The interstitial wasn't loaded yet.");
+                }
+
+
 
                 // CardModel model2 = getItem(position);
                 //if (interstitialAd.isLoaded()) {
