@@ -8,9 +8,11 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -22,9 +24,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    var drawerLayout: DrawerLayout? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +59,13 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+
+        drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
+
+        navView.setNavigationItemSelectedListener(this)
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level dest  inations.
         appBarConfiguration = AppBarConfiguration(
@@ -67,8 +74,8 @@ class MainActivity : AppCompatActivity() {
                  R.id.nav_share, R.id.nav_send
             ), drawerLayout
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+       setupActionBarWithNavController(navController, appBarConfiguration)
+        //navView.setupWithNavController(navController)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -82,10 +89,11 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
+   override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
 
-        //  Toast.makeText(Main2Activity.this, "Helooo", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Helooo", Toast.LENGTH_SHORT).show();
         var fragment: Fragment
         val id = menuItem.itemId
         Log.d("show_id", "" + id)
@@ -129,6 +137,7 @@ class MainActivity : AppCompatActivity() {
         //if (id == R.id.help) {
           //  popupHelp()
         //}
+       drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
 
@@ -162,5 +171,8 @@ class MainActivity : AppCompatActivity() {
         val alert = builder.create()
         alert.show()
     }
+
+
+
 
 }
