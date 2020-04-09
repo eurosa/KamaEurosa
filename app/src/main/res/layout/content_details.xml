@@ -14,18 +14,69 @@
         android:layout_margin="@dimen/text_margin"
         android:text="@string/large_text" />-->
 
+    <androidx.constraintlayout.widget.ConstraintLayout
 
+        android:id="@+id/scrolView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="56dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textTitle"
+            
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/image_view"
+            app:layout_constraintBottom_toTopOf="@+id/subtitle"/>
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="80dp"
+        android:layout_toEndOf="@id/image"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/image" />
 
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/text_title"
-        android:layout_toEndOf="@id/textTitle"
-        android:textAppearance="?android:textAppearanceMedium" />
-
+        android:layout_toEndOf="@id/image"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/image" />
+-->
 
 </androidx.core.widget.NestedScrollView>
