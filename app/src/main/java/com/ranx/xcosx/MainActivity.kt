@@ -23,7 +23,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
@@ -74,7 +74,8 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
             CardModel(R.drawable.saturn, R.string.saturn, R.string.saturn_sub),
             CardModel(R.drawable.uranus, R.string.uranus, R.string.uranus_sub),
             CardModel(R.drawable.neptune, R.string.neptune, R.string.neptune_sub),
-            CardModel(R.drawable.pluto, R.string.pluto, R.string.pluto_sub)
+            CardModel(R.raw.jupiter, R.string.pluto, R.string.pluto_sub)
+
         )
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
