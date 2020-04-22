@@ -65,7 +65,7 @@ public class DetailsActivity extends AppCompatActivity {
 
 
 
-    textView=findViewById(R.id.textTitle);
+        textView=findViewById(R.id.textTitle);
         stvTitle=findViewById(R.id.subtitle);
         imageView=findViewById(R.id.image_view);
 
