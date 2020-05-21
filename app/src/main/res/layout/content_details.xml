@@ -35,6 +35,8 @@
         <TextView
             android:id="@+id/textTitle"
             android:layout_width="match_parent"
+            android:textSize="20dp"
+
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/image_view"
@@ -44,6 +46,7 @@
             android:id="@+id/subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="18dp"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/textTitle"
             app:layout_constraintBottom_toBottomOf="parent"/>

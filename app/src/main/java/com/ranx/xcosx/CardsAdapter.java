@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -19,7 +20,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.InterstitialAd;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
@@ -31,8 +35,11 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
     private boolean isCheck=false;
     public InterstitialAd mInterstitial;
 
+    Context mcontext;
+
     public CardsAdapter(Context context, InterstitialAd mInterstitialAd) {
         super(context, R.layout.card_item);
+        mcontext=context;
         this.mInterstitial=mInterstitialAd;
     }
 
@@ -53,6 +60,27 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
         }
 
          final CardModel model = getItem(position);
+
+
+
+
+      /*  Picasso.get()
+                .load(model.getImageId())
+                .networkPolicy(NetworkPolicy.OFFLINE)
+                .into(holder.imageView);*/
+
+        Glide.with(mcontext).load(model.getImageId()).asBitmap().override(240, 240).into(holder.imageView);
+            // holder.imageView.setImageResource(model.getImageId());
+            holder.tvTitle.setText(model.getTitle());
+            holder.tvSubtitle.setText(model.getSubtitle());
+            holder.tvSubtitle.setSingleLine(true);
+            // holder.tvSubtitle.setEllipsize();
+            holder.tvSubtitle.setHorizontalFadingEdgeEnabled(true);
+            holder.tvSubtitle.setFadingEdgeLength(20);
+            holder.tvSubtitle.setHorizontalFadingEdgeEnabled(true);
+
+
+
 
 
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +105,12 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
 
 
                 Intent intent = new Intent(getContext(), DetailsActivity.class);
+
+              //  Picasso.get().load(R.drawable.landing_screen).into(imageView1)
+                //Bitmap bitmap = ((BitmapDrawable)holder.imageView.getDrawable()).getBitmap();
                 Bitmap bitmap = ((BitmapDrawable)holder.imageView.getDrawable()).getBitmap();
-                bitmap = Bitmap.createScaledBitmap(bitmap , 60, 60, false);
+
+                bitmap = Bitmap.createScaledBitmap(bitmap , 240, 240, false);
                 intent.putExtra("title", holder.tvTitle.getText());
                 intent.putExtra("subTitle",holder.tvSubtitle.getText());
                 intent.putExtra("image_draw", bitmap);
@@ -92,16 +124,6 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
                 startActivity(getContext(),intent,null);
             }
         });
-
-
-        holder.imageView.setImageResource(model.getImageId());
-        holder.tvTitle.setText(model.getTitle());
-        holder.tvSubtitle.setText(model.getSubtitle());
-        holder.tvSubtitle.setSingleLine(true);
-       // holder.tvSubtitle.setEllipsize();
-        holder.tvSubtitle.setHorizontalFadingEdgeEnabled(true);
-        holder.tvSubtitle.setFadingEdgeLength(20);
-        holder.tvSubtitle.setHorizontalFadingEdgeEnabled(true);
 
        // makeTextViewResizable(holder.tvSubtitle, 3, "See More", false);
 /*
@@ -134,8 +156,4 @@ public class CardsAdapter extends ArrayAdapter<CardModel> {
             tvSubtitle = view.findViewById(R.id.text_subtitle);
         }
     }
-
-
-
-
 }

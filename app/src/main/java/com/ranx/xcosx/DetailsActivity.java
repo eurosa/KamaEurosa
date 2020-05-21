@@ -1,11 +1,14 @@
 package com.ranx.xcosx;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -17,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.HtmlCompat;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -24,6 +28,9 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.OutputStream;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -121,12 +128,14 @@ public class DetailsActivity extends AppCompatActivity {
         String fileName = in.getStringExtra("image_draw");
 
         Bitmap receivedimage =in.getParcelableExtra("image_draw");
-        receivedimage = Bitmap.createScaledBitmap(receivedimage , 260, 260, false);
+        receivedimage = Bitmap.createScaledBitmap(receivedimage , 240, 240, false);
         //File filePath = getFileStreamPath(fileName);
         //Drawable d = Drawable.createFromPath(filePath.toString());
 
         //image showing---------------------------------------------
-        imageView.setImageBitmap(receivedimage);
+      //  imageView.setImageBitmap(receivedimage);
+      //  Glide.with(this).load(receivedimage).asBitmap().override(240, 240).into(imageView);
+        loadBitmapByPicasso(this, receivedimage, imageView);
         //-----------------------------------------------------------
        // imageURL=in.getStringExtra("imageUrl");
        // Picasso.get().load("https://timxn.com/image/catalog/sex-position-stairway-to-heaven-0-1508533202.jpg").into(imageView);
@@ -164,5 +173,20 @@ public class DetailsActivity extends AppCompatActivity {
         });*/
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+    private void loadBitmapByPicasso(Context pContext, Bitmap pBitmap, ImageView pImageView) {
+        try {
+            Uri uri = Uri.fromFile(File.createTempFile("temp_file_name", ".jpg", pContext.getCacheDir()));
+            OutputStream outputStream = pContext.getContentResolver().openOutputStream(uri);
+            pBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            outputStream.close();
+            Picasso.get().load(uri).into(pImageView);
+        } catch (Exception e) {
+            Log.e("LoadBitmapByPicasso", e.getMessage());
+        }
+    }
 
 }

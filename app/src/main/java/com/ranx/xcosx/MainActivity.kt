@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -19,9 +19,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.*
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 
@@ -44,7 +42,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
        MobileAds.initialize(this) {}
         mAdView = this.findViewById(R.id.adView)
        val adRequest = AdRequest.Builder().build()
-       mAdView.loadAd(adRequest)
+        mAdView.loadAd(adRequest)
 
 
         mInterstitialAd = InterstitialAd(this)
@@ -60,23 +58,64 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         /*********************************************************************************************
  ********************************************************************************************/
 
+
+
         val lvCards =
             findViewById<ListView>(R.id.list_cards)
         val adapter = CardsAdapter(this,mInterstitialAd)
 
         lvCards.adapter = adapter
         adapter.addAll(
-            CardModel(R.drawable.mercury, R.string.mercury, R.string.mercury_sub),
-            CardModel(R.drawable.venus, R.string.venus, R.string.venus_sub),
-            CardModel(R.drawable.earth, R.string.earth, R.string.earth_sub),
-            CardModel(R.drawable.mars, R.string.mars, R.string.mars_sub),
-            CardModel(R.drawable.jupiter, R.string.jupiter, R.string.jupiter_sub),
-            CardModel(R.drawable.saturn, R.string.saturn, R.string.saturn_sub),
-            CardModel(R.drawable.uranus, R.string.uranus, R.string.uranus_sub),
-            CardModel(R.drawable.neptune, R.string.neptune, R.string.neptune_sub),
-            CardModel(R.raw.jupiter, R.string.pluto, R.string.pluto_sub)
+            CardModel(R.drawable.pos_1, R.string.po_1, R.string.pos_1),
+            CardModel(R.drawable.pos_2, R.string.po_2, R.string.pos_2),
+            CardModel(R.drawable.pos_3, R.string.po_3, R.string.pos_3),
+            CardModel(R.drawable.pos_4, R.string.po_4, R.string.pos_4),
+            CardModel(R.drawable.pos_5, R.string.po_5, R.string.pos_5),
+            CardModel(R.drawable.pos_6, R.string.po_6, R.string.pos_6),
+            CardModel(R.drawable.pos_7, R.string.po_7, R.string.pos_7),
+            CardModel(R.drawable.pos_8, R.string.po_8, R.string.pos_8),
+            CardModel(R.drawable.pos_9, R.string.po_9, R.string.pos_9),
+            CardModel(R.drawable.pos_10, R.string.po_10, R.string.pos_10),
+            CardModel(R.drawable.pos_11, R.string.po_11, R.string.pos_11),
+            CardModel(R.drawable.pos_12, R.string.po_12, R.string.pos_12),
+            CardModel(R.drawable.pos_13, R.string.po_13, R.string.pos_13),
+            CardModel(R.drawable.pos_14, R.string.po_14, R.string.pos_14),
+            CardModel(R.drawable.pos_15, R.string.po_15, R.string.pos_15),
+            CardModel(R.drawable.pos_16, R.string.po_16, R.string.pos_16),
+            CardModel(R.drawable.pos_17, R.string.po_17, R.string.pos_17),
+            CardModel(R.drawable.pos_18, R.string.po_18, R.string.pos_18),
+            CardModel(R.drawable.pos_19, R.string.po_19, R.string.pos_19),
+            CardModel(R.drawable.pos_20, R.string.po_20, R.string.pos_20),
+            CardModel(R.drawable.pos_21, R.string.po_21, R.string.pos_21),
+            CardModel(R.drawable.pos_22, R.string.po_22, R.string.pos_22),
+            CardModel(R.drawable.pos_23, R.string.po_23, R.string.pos_23),
+            CardModel(R.drawable.pos_24, R.string.po_24, R.string.pos_24),
+            CardModel(R.drawable.pos_25, R.string.po_25, R.string.pos_25),
+            CardModel(R.drawable.pos_26, R.string.po_26, R.string.pos_26),
+            CardModel(R.drawable.pos_27, R.string.po_27, R.string.pos_27),
+            CardModel(R.drawable.pos_28, R.string.po_28, R.string.pos_28),
+            CardModel(R.drawable.pos_29, R.string.po_29, R.string.pos_29),
+            CardModel(R.drawable.pos_30, R.string.po_30, R.string.pos_30),
+            CardModel(R.drawable.pos_31, R.string.po_31, R.string.pos_31),
+            CardModel(R.drawable.pos_32, R.string.po_32, R.string.pos_32),
+            CardModel(R.drawable.pos_33, R.string.po_33, R.string.pos_33),
+            CardModel(R.drawable.pos_34, R.string.po_34, R.string.pos_34),
+            CardModel(R.drawable.pos_35, R.string.po_35, R.string.pos_35),
+            CardModel(R.drawable.pos_36, R.string.po_36, R.string.pos_36),
+            CardModel(R.drawable.pos_37, R.string.po_37, R.string.pos_37),
+            CardModel(R.drawable.pos_38, R.string.po_38, R.string.pos_38),
+            CardModel(R.drawable.pos_39, R.string.po_39, R.string.pos_39),
+            CardModel(R.drawable.pos_40, R.string.po_40, R.string.pos_40),
+            CardModel(R.drawable.pos_41, R.string.po_41, R.string.pos_41),
+            CardModel(R.drawable.pos_43, R.string.po_43, R.string.pos_43),
+            CardModel(R.drawable.pos_45, R.string.po_45, R.string.pos_45),
+            CardModel(R.drawable.pos_46, R.string.po_46, R.string.pos_46),
+            CardModel(R.drawable.pos_47, R.string.po_47, R.string.pos_47),
+            CardModel(R.drawable.pos_48, R.string.po_48, R.string.pos_48),
+            CardModel(R.drawable.pos_49, R.string.po_49, R.string.pos_49),
+            CardModel(R.drawable.pos_50, R.string.po_50, R.string.pos_50)
 
-        )
+            )
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -107,6 +146,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         //navView.setupWithNavController(navController)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -202,7 +242,12 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         alert.show()
     }
 
+    override fun onResume() {
+        super.onResume()
 
+
+
+    }
 
 
 }
