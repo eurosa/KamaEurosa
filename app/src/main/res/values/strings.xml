@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">GeneralContent</string>
+    <string name="app_name">Kamasutra|Sex Position</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Kamasutra | Sex Position</string>
+   <!-- <string name="nav_header_subtitle">android.studio@android.com</string>-->
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Help</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -14,6 +14,9 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Rate us</string>
 
+    <string name="intro_duction_1">What is Sex Position?</string>
+    <string name="kama_intro">"What Is Kama Sutra? More Than Just Spicy Sex Positions"</string>
+    <string name="better_sex_food">"10 foods for great sex"</string>
 
     <string name="po_1">Sex Position: Yourself on the Shelf </string>
     <string name="po_2">Sex Position: The Socket</string>
@@ -67,8 +70,95 @@
     <string name="po_48">Sex Position: The Face Sitter</string>
     <string name="po_49">Sex Position: The Elevator</string>
     <string name="po_50">Sex Position: Swiss Ball Blitz</string>
+    <string name="intro_sex_des">"Every couple wants to get the best out of the sex they have, and accomplish mutual pleasure. Nevertheless, time and time again, men end up finishing his fun during sex way before women really begins to enjoy the intimacy. Don’t fret, as there are certain sex positions which will give both of you the intimacy at the same time, increasing her pace and slowing him down. Even Durex can help you in this department – our Mutual Climax condoms come with ribs on the outside to speed her up, and benzoclaine lube on the inside, which will slow him down.
+Trying different sex positions can add a spark to your sex life. If you believe you and your partner have identified the best sex style, think again. There are so many sex positions you may have never tried, and different sex styles can stimulate different parts of your body. From old school positions like cowgirl and missionary sex position, to new age fantasizes like the cross, below mentioned are top 50 sex positions that will help you achieve mutual climax with your partner."</string>
+    <string name="kamsutra_des">"In the West, “Kama Sutra” seems to be synonymous with contortionist sex positions — ones that combine acrobatics, yoga, and perhaps primeval pornography.
+
+Well, this is only partially true.
+
+Actually, the Kama Sutra covers a lot more than meets the Western eye, and to call the Kama Sutra a book of spicy sex positions is doing this sacred, ancient Hindu text a huge disservice.
+
+Here’s why,
+
+It’s not fancy positions that turn everyday sex into tantric, sacred, lovemaking — that’s only really about 20% of it. True, sacred lovemaking is mostly about spirit and connection, which is precisely why the sexual positions only make up about 20% of the Kama Sutra.
+
+The rest of this sacred text is a guide on the Art of Love and Living Virtuously; including, but certainly not limited to:
+
+    1.The philosophy and nature of love
+    2.Family life
+    3.What triggers desire (and what sustains it)
+    4.Etiquett
+    5.Self-care
+    6.Proper grooming
+    7.The practice of various arts, such as perfume mixing, poetry, and cooking
+    8.Balancing feminine and masculine energies (in oneself and within a partnership)
+    9.Many other faculties of (non-sexual) pleasure-oriented facets of life
+
+        What Is Kamasutra?
+
+So, exactly what is Kamasutra?
+
+The word “Kamasutra” comes from two different Sanskrit words — “kama” and “sutra”. Each word has a definite meaning. Combined, the two meanings make up the premise of the book.
+
+The etymology of Kama Sutra: The most thrilling way to dissect words to gather meaning!
+Kama
+
+The word “kama” in Sanskrit means desire and is made up of both sensual and aesthetic desires. However, in regard to the Kamasutra, an emphasis is placed on sensual desire.
+
+The word kama is the Sanskrit can mean “love,” “desire,” or “pleasure.” This pleasure is not limited to sexual desire, but rather a broad term encompassing all the pleasures of life.
+
+In most world religions, sexual desire is considered taboo.
+
+However, Hinduism holds “kama” as one of the Four Goals of Hindu Life. In their goals of life, “kama” is followed by “artha” (abundance, success), “dharma” (virtue, truth), and “moksha” (release).
+Sutra
+
+“Sutra” in Sanskrit means line or thread. It is the same root as the English word suture, the strands of a line that are used in medicine to seal wounds. However, Sutra here refers to the refers to a thread of verses that form a manual.
+Where Does The Kama Sutra Come From?
+
+The Kama Sutra was a book written between 400 – 200 BCE. The Indian philosopher and sage who wrote it, Vātsyāyana Mallanaga, compiled sexual teachings and wisdom as a form of meditation.
+
+He claimed to be a celibate monk and did not record these teachings from personal experience. Rather, he condensed the lessons from the Kamashastra (the Rules of Love), which was composed hundreds of years earlier.
+        "</string>
+    <string name="better_food_des">"How effective these are, is still a big question but there are some natural substances that are believed to increase the desire and libido, in a person, since time immemorial. So here is a list of such foods that may help in bringing a positive change in your sex life.
+Wines
+Drinking wine in itself is an erotic and seductive process. Drinking it helps in lowering inhibitions and make people feel relaxed. Port wines which originate from Portugal is considered to be the most potent aphrodisiac. Not only in men, but wine is known to increase libido in woman aswell.Dr. Sheth says "it may be known as an aphrodisiac because it can decrease resistance from a woman\'s side or put her off her guards." But make sure that you don't drink any alcohol in excess as due to it's sedative properties it will only make you drowsy.
+
+Bananas
+Not only because of its phallic shape but also due to its innumerable beneficial properties. A banana is packed with vitamin A, B and C and also potassium. Vitsamin B and potassium are known to increase sex hormone production in the body. A banana is also packed with Bromelain which increases the testosterone levels. High levels of sugar present in banana gives energy, which helps to last long.
+
+Oysters
+It’s believed that Aphrodite, rose in an oyester from the sea and gave birth to her son Eros and since then it is considered as an aphrodisiac. Also the oyester when cut open resembles the female genitalia. But the scientific reason behind it, is that oyesters contain high level of zinc which is required for testosterone production. Low level of zinc can cause impotence. So no harm in eating this seafood. Well, it is said that Casanova used to eat more than 50 oyesters a day, and we all know the results.
+
+Garlic
+Garlic has allicin which helps in blood circulation. So if there is enough blood going to your groin there surely wouldn’t be any problem related to erection. Studies also show that garlic can stimulate the production of nitric oxide synthase which is responsible for erection. They say that the way to a man’s heart is through his stomach. So, next time you prepare the food put an extra dose of garlic in it.
+
+Avacado
+This is one fruit which has been associated to both female as well as male sexuality. The fruit is voluptuous and feminine in shape but as the fruit hangs in pairs from the tree, they are often said to resemble the male testicles. The Aztecs used to call the avacado tree, the testicle tree. Avacado is a rich source of beta carotene, magnesium, vitamin E, potassium and protiens — all of these are good for your sexual appetite.
+
+Figs
+A fig when cut vertically seems to resmble the female sex organ. Since ancient times it has been associated with fertility. Figs contain vitamin A, vitamin B1, vitamin B2, calcium, iron, phosphorus, manganese, and potassium and these are known to decrease sexual weakness. No wonder, it was Cleopatra’s favourite fruit.
+
+Asparagus
+In the 19th century bridegrooms in France were served three courses of asparagus just a day before their marriage. Asparagus is a rich source of potassium, vitamin B6, vitamin A, C, thiamin and folic acid. It is said that folic acid boosts histamine production which help both male and females to reach orgasm. Folic acid also helps in reducing birth defects, so, asparagus is good for a pregnant woman. Asparagus is also known to increase blood circulation in the genito urinary system.
+
+Chocolate
+Also known as the ‘food of the Gods’, chocolate has always been associated with sensuality and love. Phenylethylamine (PEA) and serotonin present in chocolate are also present in our brain and they increase our exitement and energy level. When we eat chocolate the level of both increases and lifts the mood. Anandamide along with PEA helps in reaching orgasm.
 
 
+Basil
+
+This sweet smelling herb is called ‘kiss me Nicholas’ in Italy. It is believed that basil increases sex drive and fertility. Basil has magnesium, iron, vitamin A, C and K. It relaxes blood vessels and prevents clotting in arteries, hence increases blood circulation. Basil is also known to cure all kinds of ‘headaches’ so, next time if you get this excuse its time to use basil.
+
+
+Chillies
+
+Now this has to be an aphrodisiac because of its ‘hot’ properties. From bell peppers to the red chillies — all are considered aphrodisiacs. Chillies have capsaicin which increases blood circulation and heartbeats, raises body temperature and also produces sweat. All these symptoms occurs while having sex so this might be another reason for calling it an aphrodisiac. Capsaicin also helps in releasing endorphins and stimulates the nerve endings which makes which increases the pulse and makes the body sensitive.
+
+
+It is said that just believing something as an aphrodisiac is strong enough to sexually arouse a person, or to increase his sex drive, performance and desires. But we think that there is no harm in trying these natural love foods as they surely won’t harm, but do remember that too much of everything is bad!
+
+
+"</string>
     <string name="pos_1" formatted="true">"Sex Position: Yourself on the Shelf\n\n"
 
 "Benefits: It allows for deeper and harder penetration. Also a higher likelihood of orgasming together than other positions.
@@ -580,7 +670,15 @@ Technique: Have a ball in your workout room? Use a stability ball to add some bo
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
+
     </string>
+    <!--Banner 	ca-app-pub-3940256099942544/6300978111
+    Interstitial 	ca-app-pub-3940256099942544/1033173712
+    Interstitial Video 	ca-app-pub-3940256099942544/8691691433
+    Rewarded Video 	ca-app-pub-3940256099942544/5224354917
+    Native Advanced 	ca-app-pub-3940256099942544/2247696110
+    Native Advanced Video 	ca-app-pub-3940256099942544/1044960115-->
+
     <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="banner_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="interstitial_unit_id">ca-app-pub-3940256099942544/1033173712</string>
