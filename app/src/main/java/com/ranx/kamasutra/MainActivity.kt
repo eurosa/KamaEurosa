@@ -65,6 +65,10 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         lvCards.adapter = adapter
         adapter.addAll(
+            CardModel(R.drawable.love_couple, R.string.intro_duction_1, R.string.intro_sex_des),
+            CardModel(R.drawable.kamasutra, R.string.kama_intro, R.string.kamsutra_des),
+            CardModel(R.drawable.banana, R.string.better_sex_food, R.string.better_food_des),
+
             CardModel(R.drawable.pos_1, R.string.po_1, R.string.pos_1),
             CardModel(R.drawable.pos_2, R.string.po_2, R.string.pos_2),
             CardModel(R.drawable.pos_3, R.string.po_3, R.string.pos_3),
